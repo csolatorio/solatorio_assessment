@@ -26,7 +26,7 @@ include("auth_session.php");
   <a href="form.php">LTO Form</a>
   <a href="techstack.php">Technology Stack</a>
   <a href="logout.php" style="float:right">Logout</a>
-  <a href="" style="float:right"><?php echo $_SESSION['username']; ?></a>
+  <a href="user_account.php" style="float:right"><?php echo $_SESSION['username']; ?></a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

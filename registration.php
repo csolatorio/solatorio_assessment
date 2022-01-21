@@ -12,15 +12,19 @@
     if (isset($_REQUEST['username'])) {
         // removes backslashes
         $username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
         $username = mysqli_real_escape_string($con, $username);
+        //escapes special characters in a string
+        $email    = stripslashes($_REQUEST['fname']);
+        $email    = mysqli_real_escape_string($con, $fname);
+        $email    = stripslashes($_REQUEST['lname']);
+        $email    = mysqli_real_escape_string($con, $lname);
         $email    = stripslashes($_REQUEST['email']);
         $email    = mysqli_real_escape_string($con, $email);
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con, $password);
         $create_datetime = date("Y-m-d H:i:s");
-        $query    = "INSERT into `users` (username, password, email, create_datetime)
-                     VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
+        $query    = "INSERT into `users` (username, fname, lname, password, email, create_datetime)
+                     VALUES ('$username', '$fname', '$lname',  '" . md5($password) . "', '$email', '$create_datetime')";
         $result   = mysqli_query($con, $query);
         if ($result) {
             echo "<div class='form'>
@@ -37,6 +41,8 @@
 ?>
     <form class="form" action="" method="post">
         <h1 class="login-title">Registration</h1>
+        <input type="text" class="login-input" name="fname" placeholder="Firstname" required />
+        <input type="text" class="login-input" name="lname" placeholder="Lastname" required />
         <input type="text" class="login-input" name="username" placeholder="Username" required />
         <input type="text" class="login-input" name="email" placeholder="Email Adress">
         <input type="password" class="login-input" name="password" placeholder="Password">

@@ -31,6 +31,7 @@ include("auth_session.php");
   <a href="login.php" style="float:right"><?php echo $_SESSION['username']; ?></a>
     
   </div>
+
   <div>
       <header>
           <h2>APPLICATION FOR STUDENT DRIVER'S PERMIT / DRIVER'S LICENSE / CONDUCTOR'S LICENSE (APL)</h2>
@@ -64,20 +65,20 @@ include("auth_session.php");
 					</div>
 				</div>
                 <div class="form-group">
-					<label for="lastname" class="col-md-8 control-label">Tel.No./CP No.</label>
+					<label for="Contact" class="col-md-8 control-label">Tel.No./CP No.</label>
 					<div class="col">
 						<input type="text" class="form-control" name="lastname" placeholder="" value="<?php if(!empty($_POST["lastname"])) { echo $_POST["lastname"]; } ?>" >
 					</div>
 				</div>
                 <div class="form-group">
-					<label for="lastname" class="col-md-8 control-label">Sex (F/M)</label>
+					<label for="Sex" class="col-md-8 control-label">Sex (F/M)</label>
 					<div class="col">
 						<input type="text" class="form-control" name="lastname" placeholder="" value="<?php if(!empty($_POST["lastname"])) { echo $_POST["lastname"]; } ?>" >
 					</div>
 				</div>
                 </div>
                 <div class="form-group">
-					<label for="firstname" class="col-md-3 control-label">Present Address</label>
+					<label for="paddress" class="col-md-3 control-label">Present Address</label>
 					
 					<div class="col-md-6">
 						<input type="text" class="form-control" name="address" placeholder="" value="<?php if(!empty($_POST["address"])) { echo $_POST["address"]; } ?>" required>
@@ -93,7 +94,7 @@ include("auth_session.php");
 
                 <div class="row">
             <div class="form-group1">
-					<label for="firstname" class="col-md-8 control-label">Nationality</label>
+					<label for="Nationality" class="col-md-8 control-label">Nationality</label>
 					<div class="col">
 						<input type="text" class="form-control" name="firstname" placeholder="" value="<?php if(!empty($_POST["firstname"])) { echo $_POST["firstname"]; } ?>" required>
 					</div>

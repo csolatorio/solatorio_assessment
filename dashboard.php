@@ -5,15 +5,41 @@ include("auth_session.php");
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Dashboard - Client area</title>
-    <link rel="stylesheet" href="style.css" />
+  <title>Display all records from Database</title>
 </head>
 <body>
-    <div class="form">
-        <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-        <p>You are in user dashboard page.</p>
-        <p><a href="logout.php">Logout</a></p>
-    </div>
+
+<h2>Employee Details</h2>
+
+<table border="2">
+  <tr>
+    <td>Sr.No.</td>
+    <td>Full Name</td>
+    <td>Age</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+
+<?php
+
+include "dbConn.php"; // Using database connection file here
+
+$records = mysqli_query($db,"select * from tblemp"); // fetch data from database
+
+while($data = mysqli_fetch_array($records))
+{
+?>
+  <tr>
+    <td><?php echo $data['id']; ?></td>
+    <td><?php echo $data['fullname']; ?></td>
+    <td><?php echo $data['age']; ?></td>    
+    <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+    <td><a href="delete.php?id=<?php echo $data['id']; ?>">Delete</a></td>
+  </tr>	
+<?php
+}
+?>
+</table>
+
 </body>
 </html>
