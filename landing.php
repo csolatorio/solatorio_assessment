@@ -1,3 +1,7 @@
+<?php
+//include auth_session.php file on all user panel pages
+include("auth_session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,67 +9,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-<style>
-    body, html {
-  height: 100%;
-  margin: 0;
-}
 
-.bg {
-  /* The image used */
-  background-image: url("image/banner.jpg");
-
-  /* Full height */
-  height: 50%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #107691;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #01AAA1;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #053564;
-  color: white;
-}
-</style>
 <body>
 <div class="topnav">
-  <a href="landing.php">Home</a>
+<a href="landing.php" class="logo"><img src="images/logo.png" alt="logo" width="50px" height="42px"></a>
+  <a href="landing.php" class="active">Home</a>
   <a href="contact.php">Contact</a>
   <a href="services.php">Services</a>
   <a href="form.php">LTO Form</a>
-  <a href="register.php" style="float:right">Register</a>
-  <a href="login.php" style="float:right">Login</a>
+  <a href="techstack.php">Technology Stack</a>
+  <a href="logout.php" style="float:right">Logout</a>
+  <a href="" style="float:right"><?php echo $_SESSION['username']; ?></a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
   
 </div>
-<div class="bg"></div>
-
+<img src="images/banner.jpg" alt="banner" class="responsive">
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
     
 </body>
 </html>

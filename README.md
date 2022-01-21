@@ -1,5 +1,4 @@
-# solatorio_assessment
+# Create a Registration and Login System with PHP and MySQL
+Create a Registration and Login System with PHP and MySQL
 
-Open XAMPP 
-Start Apache and mySQL
-Run the file using this script php -S localhost:8000
+Article: https://speedysense.com/create-registration-login-system-php-mysql
